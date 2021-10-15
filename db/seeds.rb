@@ -8,6 +8,10 @@
 # actor = Actor.new({first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock"})
 # actor.save
 
-20.times do
-  Actor.create(first_name: FFaker::Name.first_name, last_name: FFaker::Name.last_name, known_for: FFaker::Movie.title)
-end
+# 20.times do
+#   Actor.create(first_name: FFaker::Name.first_name, last_name: FFaker::Name.last_name, known_for: FFaker::Movie.title)
+# end
+
+# 20.times do
+#   Movie.create(title: FFaker::Movie.title, year: FFaker::Vehicle.year, plot: FFaker::Book.description)
+# end
