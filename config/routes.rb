@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "movie_by_id/:id" => "movies#get_one_movie"
   get "/actors" => "movies#get_single_actor"
   get "/actors/:id" => "movies#show"
+  post "/actors" => "movies#post_show"
 end

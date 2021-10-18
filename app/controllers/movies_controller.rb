@@ -18,4 +18,9 @@ class MoviesController < ApplicationController
     actor = Actor.find_by(id: actor_id)
     render json: {message: actor}
   end
+  def post_show
+    actor_id = params["id"]
+    actor = Actor.find_by(id: actor_id)
+    render json: {message: actor}
+  end
 end
