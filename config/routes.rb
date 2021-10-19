@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get "/all_actors" => "actors#get_actors"
-  get "/id_1" => "actors#get_actor_id_1"
-  get "/movies" => "movies#get_movies"
-  get "movie_by_id/:id" => "movies#get_one_movie"
-  get "/actors" => "movies#get_single_actor"
-  get "/actors/:id" => "movies#show"
-  post "/actors" => "movies#post_show"
+  get "/actors" => "actors#index"
+  get "/movies" => "movies#index"
+  get "movies/:id" => "movies#show"
+  get "/actors/:id" => "actors#show"
+  post "/actors" => "actors#create"
+  post "/movies" => "movies#create"
+  patch "/movies/:id" => "movies#update"
+  patch "/actors/:id" => "actors#update"
+  delete "/movies/:id" => "movies#destroy"
+  delete "/actors/:id" => "actors#destroy"
 end

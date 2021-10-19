@@ -2,5 +2,42 @@ POST http://localhost:3000/actors.json
 Content-Type: application/json
 
 {
-  "id": 1
+  "first_name": "Leonardo",
+  "last_name": "Dicaprio",
+  "known_for": "Titanic"
 }
+
+###
+POST http://localhost:3000/movies.json
+Content-Type: application/json
+
+{
+  "title": "Titanic",
+  "year": 1997,
+  "plot": "A big boat hits an iceberg."
+}
+
+###
+PATCH http://localhost:3000/movies/23.json
+Content-Type: application/json
+
+{
+  "plot": "A love story. A big boat hits an iceberg."
+}
+
+###
+PATCH http://localhost:3000/actors/68.json
+Content-Type: application/json
+
+{
+  "last_name": "DiCaprio",
+  "known_for": "Inception, The Revenant"
+}
+
+###
+DELETE http://localhost:3000/movies/23.json
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/actors/68.json
+Content-Type: application/json
