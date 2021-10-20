@@ -4,7 +4,9 @@ Content-Type: application/json
 {
   "first_name": "Leonardo",
   "last_name": "Dicaprio",
-  "known_for": "Titanic"
+  "known_for": "Titanic",
+  "gender": "male",
+  "age": 50
 }
 
 ###
@@ -12,26 +14,29 @@ POST http://localhost:3000/movies.json
 Content-Type: application/json
 
 {
-  "title": "Titanic",
-  "year": 1997,
-  "plot": "A big boat hits an iceberg."
+  "title": "The Big Lebowsi",
+  "year": 1999,
+  "plot": "The Dude Abides.",
+  "director": "Cohen Bro's",
+  "english": false
 }
 
 ###
-PATCH http://localhost:3000/movies/23.json
+PATCH http://localhost:3000/movies/25.json
 Content-Type: application/json
 
 {
-  "plot": "A love story. A big boat hits an iceberg."
+  "english": true
 }
 
 ###
-PATCH http://localhost:3000/actors/68.json
+PATCH http://localhost:3000/actors/69.json
 Content-Type: application/json
 
 {
   "last_name": "DiCaprio",
-  "known_for": "Inception, The Revenant"
+  "known_for": "Inception, The Revenant",
+  "age": 51
 }
 
 ###

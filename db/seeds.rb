@@ -9,9 +9,9 @@
 # actor.save
 
 # 20.times do
-#   Actor.create(first_name: FFaker::Name.first_name, last_name: FFaker::Name.last_name, known_for: FFaker::Movie.title)
+#   Actor.create(first_name: FFaker::Name.first_name, last_name: FFaker::Name.last_name, known_for: FFaker::Movie.title, age: 29, gender: "female")
 # end
 
-# 20.times do
-#   Movie.create(title: FFaker::Movie.title, year: FFaker::Vehicle.year, plot: FFaker::Book.description)
+# 3.times do
+#   Movie.create(title: FFaker::Movie.title, year: FFaker::Vehicle.year, plot: FFaker::Book.description, director: FFaker::Name.first_name, english: true)
 # end
