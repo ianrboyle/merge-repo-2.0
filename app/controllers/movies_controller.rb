@@ -9,8 +9,12 @@ class MoviesController < ApplicationController
     render json: movie.as_json
   end
   def create
-    movie = Movie.create(title: params["title"], year: params["year"], plot: params["plot"], director: params["director"], english: params["english"])
-    render json: movie.as_json
+    movie = Movie.new(title: params["title"], year: params["year"], plot: params["plot"], director: params["director"], english: params["english"])
+    if movie.save
+      render json: movie.as_json
+    else
+      render json: {errors: movie.errors.full_messages}
+    end
   end
 
   def update
@@ -20,8 +24,11 @@ class MoviesController < ApplicationController
     movie.plot = params["plot"] || movie.plot
     movie.director = params["director"] || movie.director
     movie.english = params["english"] || movie.english
-    movie.save
-    render json: movie.as_json
+    if movie.save
+      render json: movie.as_json
+    else
+      render json: {errors: movie.errors.full_messages}
+    end
   end
   def destroy
     movie = Movie.find_by(id: params["id"])

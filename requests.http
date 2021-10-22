@@ -2,11 +2,10 @@ POST http://localhost:3000/actors.json
 Content-Type: application/json
 
 {
-  "first_name": "Leonardo",
-  "last_name": "Dicaprio",
-  "known_for": "Titanic",
+  "first_name": "Young",
+  "last_name": "Jones",
   "gender": "male",
-  "age": 50
+  "age": 14
 }
 
 ###
@@ -22,10 +21,11 @@ Content-Type: application/json
 }
 
 ###
-PATCH http://localhost:3000/movies/25.json
+PATCH http://localhost:3000/movies/31.json
 Content-Type: application/json
 
 {
+  "year": 1998,
   "english": true
 }
 
