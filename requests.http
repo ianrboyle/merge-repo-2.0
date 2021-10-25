@@ -5,7 +5,8 @@ Content-Type: application/json
   "first_name": "Young",
   "last_name": "Jones",
   "gender": "male",
-  "age": 14
+  "age": 14,
+  "movie_id": 1
 }
 
 ###
