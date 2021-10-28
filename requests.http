@@ -33,14 +33,15 @@ Content-Type: application/json
 ###
 #CREATE
 POST http://localhost:3000/movies.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU1MTIxMTF9.6tqnu-XNwenlcPEC4l_n92RlW1epnrxjopmwOD15Haw
 Content-Type: application/json
 
 {
-  "title": "The Big Lebowsi",
-  "year": 1999,
-  "plot": "The Dude Abides.",
-  "director": "Cohen Bro's",
-  "english": false
+  "title": "300",
+  "year": 2008,
+  "plot": "Spartans kill.",
+  "director": "IDK",
+  "english": true
 }
 
 ###

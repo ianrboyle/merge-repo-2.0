@@ -8,12 +8,17 @@ class MoviesController < ApplicationController
     movie = Movie.find_by(id: params["id"])
     render json: movie.as_json
   end
+
   def create
-    movie = Movie.new(title: params["title"], year: params["year"], plot: params["plot"], director: params["director"], english: params["english"])
-    if movie.save
-      render json: movie.as_json
+    if current_user
+      movie = Movie.new(title: params["title"], year: params["year"], plot: params["plot"], director: params["director"], english: params["english"])
+      if movie.save
+        render json: movie.as_json
+      else
+        render json: {errors: movie.errors.full_messages}
+      end
     else
-      render json: {errors: movie.errors.full_messages}
+      render json: {error: "Must be logged in to create a movie"}, status: 418
     end
   end
 
