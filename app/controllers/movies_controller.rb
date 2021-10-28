@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user
   before_action :authenticate_admin, except: [:index, :show]
   
   def index
@@ -16,7 +17,7 @@ class MoviesController < ApplicationController
     if movie.save
       render json: movie.as_json
     else
-      render json: {errors: movie.errors.full_messages}
+      render json: {errors: movie.errors.full_messages}, status: 418
     end
   end
 
@@ -30,12 +31,13 @@ class MoviesController < ApplicationController
     if movie.save
       render json: movie.as_json
     else
-      render json: {errors: movie.errors.full_messages}
+      render json: {errors: movie.errors.full_messages}, status: 418
     end
   end
+  
   def destroy
     movie = Movie.find_by(id: params["id"])
     movie.destroy
-    render json: {message: "Movie removed from the arrchives."}
+    render json: {message: "Movie removed from the archives."}
   end
 end

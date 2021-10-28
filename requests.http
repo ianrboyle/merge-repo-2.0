@@ -31,15 +31,20 @@ Content-Type: application/json
 ###MOVIE REQUESTS 
 
 ###
+#INDEX
+GET http://localhost:3000/movies.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU1MTM3Mjh9.YtMiczplit36-sGBnKdTyU8DZRWTEHXiclPqXY8Jdg4
+
 #CREATE
+###
 POST http://localhost:3000/movies.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU1MTIxMTF9.6tqnu-XNwenlcPEC4l_n92RlW1epnrxjopmwOD15Haw
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU1MTM2NjN9.WLF837nXfcDVDcDKwZy4R7nyv1R9B-3O8JzWpPApACk
 Content-Type: application/json
 
 {
-  "title": "300",
+  "title": "A movie",
   "year": 2008,
-  "plot": "Spartans kill.",
+  "plot": "Does movie stuff.",
   "director": "IDK",
   "english": true
 }
@@ -58,7 +63,8 @@ Content-Type: application/json
 
 ###
 #DELETE
-DELETE http://localhost:3000/movies/23.json
+DELETE http://localhost:3000/movies/34.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU1MTM2NjN9.WLF837nXfcDVDcDKwZy4R7nyv1R9B-3O8JzWpPApACk
 Content-Type: application/json
 
 
