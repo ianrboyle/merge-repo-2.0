@@ -1,3 +1,6 @@
+
+###ACTOR REQUESTS###
+#CREATE
 POST http://localhost:3000/actors.json
 Content-Type: application/json
 
@@ -10,6 +13,25 @@ Content-Type: application/json
 }
 
 ###
+#UPDATE
+PATCH http://localhost:3000/actors/69.json
+Content-Type: application/json
+
+{
+  "last_name": "DiCaprio",
+  "known_for": "Inception, The Revenant",
+  "age": 51
+}
+
+###
+#DELETE
+DELETE http://localhost:3000/actors/68.json
+Content-Type: application/json
+
+###MOVIE REQUESTS 
+
+###
+#CREATE
 POST http://localhost:3000/movies.json
 Content-Type: application/json
 
@@ -22,6 +44,7 @@ Content-Type: application/json
 }
 
 ###
+#UPDATE
 PATCH http://localhost:3000/movies/31.json
 Content-Type: application/json
 
@@ -30,20 +53,34 @@ Content-Type: application/json
   "english": true
 }
 
-###
-PATCH http://localhost:3000/actors/69.json
-Content-Type: application/json
 
-{
-  "last_name": "DiCaprio",
-  "known_for": "Inception, The Revenant",
-  "age": 51
-}
 
 ###
+#DELETE
 DELETE http://localhost:3000/movies/23.json
 Content-Type: application/json
 
-###
-DELETE http://localhost:3000/actors/68.json
+
+
+
+###USER REQUESTS
+### Users create (signup)
+POST http://localhost:3000/users
 Content-Type: application/json
+
+{
+  "name": "Ian name",
+  "email": "ian@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
