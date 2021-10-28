@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+  
   def index
     movies = Movie.all
     render json: {movies: movies.as_json}
@@ -10,15 +12,11 @@ class MoviesController < ApplicationController
   end
 
   def create
-    if current_user
-      movie = Movie.new(title: params["title"], year: params["year"], plot: params["plot"], director: params["director"], english: params["english"])
-      if movie.save
-        render json: movie.as_json
-      else
-        render json: {errors: movie.errors.full_messages}
-      end
+    movie = Movie.new(title: params["title"], year: params["year"], plot: params["plot"], director: params["director"], english: params["english"])
+    if movie.save
+      render json: movie.as_json
     else
-      render json: {error: "Must be logged in to create a movie"}, status: 418
+      render json: {errors: movie.errors.full_messages}
     end
   end
 
