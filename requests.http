@@ -33,7 +33,7 @@ Content-Type: application/json
 ###
 #INDEX
 GET http://localhost:3000/movies.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU1MTM3Mjh9.YtMiczplit36-sGBnKdTyU8DZRWTEHXiclPqXY8Jdg4
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU2MDczOTF9.Yw4j6lZf8NYwMhjJZhXAD3IkE74MZ_tJ_6C-0sw7q_I
 
 #CREATE
 ###
