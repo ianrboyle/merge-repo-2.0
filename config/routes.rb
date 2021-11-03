@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
+  ###MOVIE GENRE ROUTES
+  post "/movie_genres" => "movie_genres#create"
+  
   ###MOVIE ROUTES
   get "/movies" => "movies#index"
   get "movies/:id" => "movies#show"
