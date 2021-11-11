@@ -9,15 +9,19 @@
     </div>
     <dialog id="post-details">
       <form method="dialog">
-        <h1>{{ currentPost.title }}</h1>
+        <h2>{{ currentPost.title }}</h2>
         <p>{{ currentPost.body }}</p>
 
-        <button>close</button>
+        <button>Close</button>
       </form>
     </dialog>
   </div>
 </template>
-
+<style>
+img {
+  width: 250px;
+}
+</style>
 <script>
 // @ is an alias to /src
 import axios from "axios";
@@ -30,11 +34,11 @@ export default {
     };
   },
   created: function () {
-    this.getPosts();
+    this.indexPosts();
   },
 
   methods: {
-    getPosts: function () {
+    indexPosts: function () {
       axios.get("http://localhost:3000/posts").then((response) => {
         this.posts = response.data;
         console.log("Success", response.data);

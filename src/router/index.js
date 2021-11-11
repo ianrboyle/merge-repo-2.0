@@ -1,10 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Posts from "../views/Posts.vue";
+import PostsIndex from "../views/PostsIndex.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import PostsNew from "../views/PostsNew.vue";
 
 Vue.use(VueRouter);
 
@@ -24,12 +25,13 @@ const routes = [
   },
   {
     path: "/posts",
-    name: "Posts",
-    component: Posts,
+    name: "PostsIndex",
+    component: PostsIndex,
   },
   { path: "/signup", name: "signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
+  { path: "/posts/new", name: "PostsNew", component: PostsNew },
 ];
 
 const router = new VueRouter({
