@@ -2,14 +2,19 @@
   <div class="posts">
     <h1>This is a posts page</h1>
     <div v-for="post in posts" :key="post.id">
-      <h5>{{ post.title }}</h5>
-      <button v-on:click=""></button>
-      <dialog id="poost-details">
-        <form method="dialog">
-          <h1>Post Info</h1>
-        </form>
-      </dialog>
+      <h3>{{ post.title }}</h3>
+      <img :src="post.image" :alt="post.title" />
+      <br />
+      <button v-on:click="showPosts(post)">Show Me More!</button>
     </div>
+    <dialog id="post-details">
+      <form method="dialog">
+        <h1>{{ currentPost.title }}</h1>
+        <p>{{ currentPost.body }}</p>
+
+        <button>close</button>
+      </form>
+    </dialog>
   </div>
 </template>
 
@@ -21,6 +26,7 @@ export default {
     return {
       message: "Welcome to Ian's Blog!",
       posts: [],
+      currentPost: {},
     };
   },
   created: function () {
@@ -34,7 +40,11 @@ export default {
         console.log("Success", response.data);
       });
     },
-    showPost: function (post) {},
+    showPosts: function (post) {
+      this.currentPost = post;
+      console.log(this.currentPost, post);
+      document.querySelector("#post-details").showModal();
+    },
     // createPost: function () {},
   },
 };
