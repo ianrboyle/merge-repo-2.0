@@ -2,6 +2,7 @@
 ###ACTOR REQUESTS###
 #CREATE
 POST http://localhost:3000/actors.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzcwMTAxMzR9.tpS0bQnP7uv6n3G1RqlxUPWNdf-FcNRLCzp7_EBcQ0g
 Content-Type: application/json
 
 {
@@ -33,7 +34,7 @@ Content-Type: application/json
 ###
 #INDEX
 GET http://localhost:3000/movies.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU2MDczOTF9.Yw4j6lZf8NYwMhjJZhXAD3IkE74MZ_tJ_6C-0sw7q_I
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzcwMTAxMzR9.tpS0bQnP7uv6n3G1RqlxUPWNdf-FcNRLCzp7_EBcQ0g
 
 #CREATE
 ###
