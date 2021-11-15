@@ -3,18 +3,19 @@
     <h1>This is a posts page</h1>
     <div v-for="post in posts" :key="post.id">
       <h3>{{ post.title }}</h3>
-      <img :src="post.image" :alt="post.title" />
-      <br />
-      <button v-on:click="showPosts(post)">Show Me More!</button>
+      <router-link v-bind:to="`posts/${post.id}`">
+        <img :src="post.image" :alt="post.title" />
+      </router-link>
+      <!-- <button v-on:click="showPosts(post)">Show Me More!</button> -->
     </div>
-    <dialog id="post-details">
+    <!-- <dialog id="post-details">
       <form method="dialog">
         <h2>{{ currentPost.title }}</h2>
         <p>{{ currentPost.body }}</p>
 
         <button>Close</button>
       </form>
-    </dialog>
+    </dialog> -->
   </div>
 </template>
 <style>

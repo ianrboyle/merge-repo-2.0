@@ -5,7 +5,7 @@
     <img :src="post.image" :alt="post.title" />
     <br />
     <p>{{ post.body }}</p>
-    <router-link to="/">Home Page</router-link>
+    <router-link to="/posts">Back to My Posts</router-link>
   </div>
 </template>
 <style>
@@ -23,7 +23,7 @@ export default {
     };
   },
   created: function () {
-    axios.get("http://localhost:3000/posts/1").then((response) => {
+    axios.get("http://localhost:3000/posts/" + this.$route.params.id).then((response) => {
       this.post = response.data;
       console.log("Success", response.data);
     });
