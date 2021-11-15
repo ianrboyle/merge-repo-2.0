@@ -5,6 +5,8 @@
     <img :src="post.image" :alt="post.title" />
     <br />
     <p>{{ post.body }}</p>
+    <router-link v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link>
+    |
     <router-link to="/posts">Back to My Posts</router-link>
   </div>
 </template>
