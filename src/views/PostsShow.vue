@@ -9,7 +9,7 @@
     |
     <router-link to="/posts">Back to My Posts</router-link>
     |
-    <button v-on:click="destroyPost">Delete</button>
+    <button v-on:click="destroyPost()">Delete</button>
   </div>
 </template>
 <style>

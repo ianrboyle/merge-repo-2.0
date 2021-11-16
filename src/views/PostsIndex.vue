@@ -1,21 +1,32 @@
 <template>
   <div class="posts">
     <h1>This is a posts page</h1>
-    <div v-for="post in posts" :key="post.id">
-      <h3>{{ post.title }}</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+      </div>
+
+      <div v-for="post in posts" :key="post.id">
+        <div class="card" style="width: 18rem">
+          <img :src="post.image" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text"></p>
+            <router-link v-bind:to="`posts/${post.id}`">
+              <button type="button" class="btn btn-primary">More Info</button>
+            </router-link>
+          </div>
+        </div>
+
+        <!-- <h3>{{ post.title }}</h3>
       <router-link v-bind:to="`posts/${post.id}`">
         <img :src="post.image" :alt="post.title" />
       </router-link>
-      <!-- <button v-on:click="showPosts(post)">Show Me More!</button> -->
+    </div> -->
+      </div>
     </div>
-    <!-- <dialog id="post-details">
-      <form method="dialog">
-        <h2>{{ currentPost.title }}</h2>
-        <p>{{ currentPost.body }}</p>
-
-        <button>Close</button>
-      </form>
-    </dialog> -->
   </div>
 </template>
 <style>
