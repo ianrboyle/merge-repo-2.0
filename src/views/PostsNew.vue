@@ -1,5 +1,6 @@
 <template>
   <div class="posts-new">
+    <img v-if="status" :src="`https://http.cat/${status}`" alt="" />
     <form v-on:submit.prevent="createPost()">
       <h1>Create New Post!</h1>
       <ul>
@@ -20,9 +21,7 @@
           rows="5"
           v-model="newPostParams.body"
         ></textarea>
-        <small v-if="newPostParams.body.length < 200">
-          {{ 200 - newPostParams.body.length }} characters remaining.
-        </small>
+        <small v-else>{{ 200 - newPostParams.body.length }} characters remaining.</small>
         <small v-if="newPostParams.body.length > 200" class="text-danger">
           {{ 200 - newPostParams.body.length }} characters remaining.
         </small>
@@ -49,6 +48,7 @@ export default {
     return {
       newPostParams: { body: "" },
       errors: [],
+      status: "",
     };
   },
   methods: {
@@ -59,7 +59,10 @@ export default {
         .then(() => {
           this.$router.push("/posts");
         })
-        .catch((error) => console.log(error.response));
+        .catch((error) => {
+          this.status = error.response.status;
+          console.log(error.response);
+        });
     },
   },
 };
