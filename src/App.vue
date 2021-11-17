@@ -74,8 +74,12 @@
 body {
   font-family: "Courier New", Courier, monospace;
   background-image: url("./assets/circle-blues.png");
+  color: white;
 }
 h1 {
   color: lightgreen;
+}
+p {
+  color: white;
 }
 </style>
