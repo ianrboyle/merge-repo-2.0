@@ -10,14 +10,8 @@
       </span>
     </div> -->
     <div class="container">
-      <div class="row">
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-      </div>
-
       <div
-        v-on:hover="currentPost = post"
+        v-on:click="currentPost = post"
         v-bind:class="{ hovered: post === currentPost }"
         v-for="post in posts"
         :key="post.id"
@@ -25,12 +19,15 @@
         <div class="card" style="width: 18rem">
           <div class="card-body">
             <span @mouseover="hover = true" @mouseleave="hover = false">
-              <img :src="post.image" class="card-img-top" alt="..." />
+              <div>
+                <img :src="post.image" class="card-img-top" alt="..." />
+
+                <h5 class="card-title">{{ post.title }}</h5>
+              </div>
             </span>
             <span v-if="hover">
-              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.body }}</p>
             </span>
-            <p class="card-text"></p>
             <router-link v-bind:to="`posts/${post.id}`">
               <button type="button" class="btn btn-primary">More Info</button>
             </router-link>
@@ -54,6 +51,13 @@ img {
 .hovered {
   background-color: lightskyblue;
   transition: background-color 1s ease;
+}
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  background-color: lightskyblue;
+  color: black;
 }
 </style>
 

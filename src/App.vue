@@ -82,4 +82,10 @@ h1 {
 p {
   color: white;
 }
+label {
+  color: white;
+}
+small {
+  color: white;
+}
 </style>

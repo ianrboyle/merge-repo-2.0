@@ -12,7 +12,20 @@
       <div>
         <label>Content:</label>
         <!-- <input type="text" v-model="newPostParams.body" /> -->
-        <textarea cols="100" rows="5" v-model="newPostParams.body"></textarea>
+        <textarea v-if="newPostParams.body.length < 200" cols="100" rows="5" v-model="newPostParams.body"></textarea>
+        <textarea
+          v-if="newPostParams.body.length > 200"
+          class="red"
+          cols="100"
+          rows="5"
+          v-model="newPostParams.body"
+        ></textarea>
+        <small v-if="newPostParams.body.length < 200">
+          {{ 200 - newPostParams.body.length }} characters remaining.
+        </small>
+        <small v-if="newPostParams.body.length > 200" class="text-danger">
+          {{ 200 - newPostParams.body.length }} characters remaining.
+        </small>
       </div>
       <div>
         <label>Image:</label>
@@ -23,13 +36,18 @@
   </div>
 </template>
 
+<style>
+.red {
+  background-color: rgb(242, 25, 25);
+}
+</style>
 <script>
 import axios from "axios";
 
 export default {
   data: function () {
     return {
-      newPostParams: {},
+      newPostParams: { body: "" },
       errors: [],
     };
   },
