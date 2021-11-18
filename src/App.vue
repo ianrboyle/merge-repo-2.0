@@ -95,6 +95,7 @@ export default {
   data: function () {
     return {
       logInMessage: "",
+      titleFilter: "",
     };
   },
   methods: {
