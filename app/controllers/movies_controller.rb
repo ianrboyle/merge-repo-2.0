@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
     movie.year = params["year"] || movie.year
     movie.plot = params["plot"] || movie.plot
     movie.director = params["director"] || movie.director
-    movie.english = params["english"] || movie.english
+    movie.english =  true
     if movie.save
       render json: movie
     else

@@ -6,16 +6,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzcwMTAxM
 Content-Type: application/json
 
 {
-  "first_name": "Young",
-  "last_name": "Jones",
+  "first_name": "New",
+  "last_name": "Actor",
   "gender": "male",
-  "age": 14,
-  "movie_id": 1
+  "age": 61,
+  "movie_id": 3
 }
 
 ###
 #UPDATE
-PATCH http://localhost:3000/actors/69.json
+PUT http://localhost:3000/actors/69.json
 Content-Type: application/json
 
 {
@@ -46,13 +46,12 @@ Content-Type: application/json
   "title": "A movie",
   "year": 2008,
   "plot": "Does movie stuff.",
-  "director": "IDK",
-  "english": true
+  "director": "IDK"
 }
 
 ###
 #UPDATE
-PATCH http://localhost:3000/movies/31.json
+PUT http://localhost:3000/movies/31.json
 Content-Type: application/json
 
 {
