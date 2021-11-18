@@ -8,6 +8,10 @@
         <option v-for="post in posts" :key="post.id">{{ post.title }}</option>
       </datalist>
     </div>
+    <div>
+      <button v-on:click="setSortAttribute('created_at')">Sort By Date Added</button>
+      <button v-on:click="setSortAttribute('title')">Sort By Title</button>
+    </div>
     <!-- <div>
       <span @mouseover="hover = true" @mouseleave="hover = false">
         <p>Hover me to show the message!</p>
@@ -20,7 +24,7 @@
       <div
         v-on:click="currentPost = post"
         v-bind:class="{ hovered: post === currentPost }"
-        v-for="post in filterBy(posts, titleFilter, 'title', 'body')"
+        v-for="post in orderBy(filterBy(posts, titleFilter, 'title', 'body'), sortAttribute)"
         :key="post.id"
       >
         <div class="card" style="width: 18rem">
@@ -83,6 +87,7 @@ export default {
       currentPost: {},
       hover: false,
       titleFilter: "",
+      sortAttribute: "title",
     };
   },
   created: function () {
@@ -103,6 +108,9 @@ export default {
     },
     relativeDate: function (date) {
       return moment(date).fromNow();
+    },
+    setSortAttribute: function (inputAttribute) {
+      this.sortAttribute = inputAttribute;
     },
     // createPost: function () {},
   },
