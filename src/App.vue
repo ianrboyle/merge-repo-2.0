@@ -34,7 +34,7 @@
             <li v-if="isLoggedIn()" class="nav-item">
               <a class="nav-link" href="/logout">Logout</a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -51,10 +51,10 @@
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
               <a class="nav-link disabled">Disabled</a>
-            </li>
+            </li> -->
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -63,6 +63,9 @@
         </div>
       </div>
     </nav>
+    <div v-if="logInMessage" v-on:click="logInMessage" class="alert alert-success">
+      {{ logInMessage }}
+    </div>
     <router-view />
   </div>
 </template>
@@ -77,7 +80,7 @@ h1 {
   color: lightgreen;
 }
 p {
-  color: white;
+  color: black;
 }
 label {
   color: white;
@@ -89,6 +92,11 @@ small {
 
 <script>
 export default {
+  data: function () {
+    return {
+      logInMessage: "",
+    };
+  },
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {

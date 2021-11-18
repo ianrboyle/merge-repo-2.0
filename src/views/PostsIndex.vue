@@ -27,7 +27,9 @@
             </span>
             <span v-if="hover">
               <p class="card-text">{{ post.body }}</p>
+              <p class="card-text">Added: {{ relativeDate(post.created_at) }}</p>
             </span>
+            <p class="card-text">Updated: {{ relativeDate(post.updated_at) }}</p>
             <router-link v-bind:to="`posts/${post.id}`">
               <button type="button" class="btn btn-primary">More Info</button>
             </router-link>
@@ -64,6 +66,8 @@ img {
 <script>
 // @ is an alias to /src
 import axios from "axios";
+import moment from "moment";
+
 export default {
   data: function () {
     return {
@@ -88,6 +92,9 @@ export default {
       this.currentPost = post;
       console.log(this.currentPost, post);
       document.querySelector("#post-details").showModal();
+    },
+    relativeDate: function (date) {
+      return moment(date).fromNow();
     },
     // createPost: function () {},
   },
